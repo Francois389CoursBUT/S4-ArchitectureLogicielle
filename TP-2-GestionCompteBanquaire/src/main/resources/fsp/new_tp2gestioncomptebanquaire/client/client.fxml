@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="385.0" prefWidth="392.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fsp.new_tp2gestioncomptebanquaire.client.Client">
+   <children>
+      <Text layoutX="103.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion compte">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <TextField fx:id="ipServeurTxt" layoutX="122.0" layoutY="87.0" />
+      <TextField fx:id="portServeurTxt" layoutX="122.0" layoutY="127.0" />
+      <TextField fx:id="montantTxt" layoutX="122.0" layoutY="236.0" />
+      <Label layoutX="49.0" layoutY="90.0" text="IP Serveur">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="80.0" layoutY="130.0" text="Port">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnConnecter" layoutX="297.0" layoutY="110.0" mnemonicParsing="false" onAction="#btnConnecterAction" text="Connecter" />
+      <Label layoutX="53.0" layoutY="239.0" text="Montant">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="307.0" prefHeight="40.0" prefWidth="360.0" spacing="30.0">
+         <children>
+            <Button fx:id="btnAfficherSolde" mnemonicParsing="false" onAction="#afficherSolde" text="Afficher solde" />
+            <Button fx:id="btnCrediter" mnemonicParsing="false" onAction="#crediter" text="Créditer" />
+            <Button fx:id="btnDebiter" mnemonicParsing="false" onAction="#debiter" text="Débiter" />
+         </children>
+      </HBox>
+      <Button fx:id="btnDeconecter" layoutX="154.0" layoutY="168.0" mnemonicParsing="false" onAction="#deconnecter" text="Déconnecter" />
+   </children>
+</Pane>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fsp.tp3messagerie.client.Client">
+   <children>
+      <Text layoutX="60.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="URL Serveur" />
+       <TextField fx:id="messageAEnvoyer" layoutX="28.0" layoutY="343.0" onMouseClicked="#txtMessageAEnvoyerMouseClicked" prefHeight="25.0" prefWidth="415.0" />
+       <Text layoutX="83.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pseudo" />
+       <TextField fx:id="pseudo" layoutX="158.0" layoutY="101.0" />
+       <Text layoutX="34.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Messages déposés" />
+       <TextArea fx:id="messageDepose" layoutX="32.0" layoutY="203.0" prefHeight="82.0" prefWidth="415.0" />
+       <Text layoutX="32.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Message à envoyer" />
+       <TextField fx:id="urlServeur" layoutX="158.0" layoutY="60.0" />
+      <Button fx:id="btnConnecter" layoutX="395.0" layoutY="60.0" mnemonicParsing="false" onAction="#btnConnecterAction" text="Connecter" />
+      <Button fx:id="btnRafraichir" layoutX="483.0" layoutY="232.0" mnemonicParsing="false" onAction="#btnRafraichirAction" text="Rafraichir" />
+      <Button fx:id="btnEnvoyer" layoutX="483.0" layoutY="343.0" mnemonicParsing="false" onAction="#btnEnvoyerAction" text="Envoyer" />
+   </children>
+</AnchorPane>
