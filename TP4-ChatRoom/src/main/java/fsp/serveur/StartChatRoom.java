@@ -5,12 +5,12 @@ import java.net.InetAddress;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 
-public class LanceServeur {
+public class StartChatRoom {
   public static void main(String[] args) {
       int port = 1099;
       try {
           LocateRegistry.createRegistry(port);
-          Naming.bind("serveur", new ServeurImpl());
+          Naming.bind("serveur", new ChatRoomImpl());
           System.out.println("Serveur enregistré sous RMI, prêt à recevoir des messages.");
           System.out.println("Url serveur = rmi://"+InetAddress.getLocalHost()
                             .getHostAddress()+":"+port+"/serveur");

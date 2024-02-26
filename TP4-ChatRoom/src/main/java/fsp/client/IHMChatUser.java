@@ -1,15 +1,16 @@
 package fsp.client;
 
-import fsp.interface_serveur.Serveur;
+import fsp.interface_client.ChatUser;
+import fsp.interface_serveur.ChatRoom;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.List;
 import javax.swing.JOptionPane;
 
 
-public class FenetreClient extends javax.swing.JFrame {
+public class IHMChatUser extends javax.swing.JFrame {
     
-    private Serveur serveur;
+    private ChatRoom chatroom;
     
     /**
      * Afficher un message reçu.
@@ -19,7 +20,7 @@ public class FenetreClient extends javax.swing.JFrame {
     }
     
     /** Creates new form FenetreClient. */
-    public FenetreClient() {
+    public IHMChatUser() {
         initComponents();
         txtMessageAEnvoyer.setEnabled(false);
         btnEnvoyer.setEnabled(false);
@@ -172,7 +173,7 @@ public class FenetreClient extends javax.swing.JFrame {
         try {
             String message = txtMessageAEnvoyer.getText();
             // Envoi message au serveur
-            serveur.postMessage(message, txtPseudo.getText());
+            chatroom.poster(message, txtPseudo.getText());
        } catch (Exception e) {
             JOptionPane.showMessageDialog(this,
                     "Connexion serveur imposible.\n"+e);
@@ -190,10 +191,11 @@ private void btnConnecterAction(java.awt.event.ActionEvent evt) {//GEN-FIRST:eve
     else if (txtPseudo.getText().isEmpty())
             JOptionPane.showMessageDialog(this,"Pseudo non saisi!");
     else try {
-        serveur = (Serveur) Naming.lookup(txtUrlServeur.getText());   
-        List<String> messages = serveur.getMessages();
-        for(String message: messages) 
-          txtMessagesDeposes.append(message+"\n");
+        chatroom = (ChatRoom) Naming.lookup(txtUrlServeur.getText());
+
+        ChatUser utilisateur = new ChatUserImpl(this);
+        chatroom.connecter(utilisateur, txtPseudo.getText());
+
         txtUrlServeur.setEnabled(false);
         txtPseudo.setEnabled(false);
         btnConnecter.setEnabled(false);
@@ -201,6 +203,7 @@ private void btnConnecterAction(java.awt.event.ActionEvent evt) {//GEN-FIRST:eve
         btnEnvoyer.setEnabled(true);
         txtMessageAEnvoyer.setText("Saisir votre message"); // Remettre à vide si reconnexion           
     }catch (Exception e) {
+        e.printStackTrace();
         JOptionPane.showMessageDialog(this,"Connexion serveur imposible.\n"+e);
     }
 }//GEN-LAST:event_btnConnecterAction
@@ -209,14 +212,6 @@ private void btnConnecterAction(java.awt.event.ActionEvent evt) {//GEN-FIRST:eve
    * Réafficher dans txtMessagesDeposes les messages renvoués par erveur.getMessages().
    */
   private void btnRafraichirAction(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRafraichirAction
-      try {
-        List<String> messages = serveur.getMessages();
-        txtMessagesDeposes.setText("");
-        for(String message : messages)
-          txtMessagesDeposes.append(message+"\n");
-      } catch (RemoteException e) {
-        JOptionPane.showMessageDialog(this,"Erreur d'accès au serveur.\n"+e);
-      }
   }//GEN-LAST:event_btnRafraichirAction
 
   private void txtMessageAEnvoyerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMessageAEnvoyerMouseClicked
@@ -229,9 +224,13 @@ private void btnConnecterAction(java.awt.event.ActionEvent evt) {//GEN-FIRST:eve
     public static void main(String args[]) {       
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FenetreClient().setVisible(true);
+                new IHMChatUser().setVisible(true);
             }
         });
+    }
+
+    public void afficher(String message) throws RemoteException {
+        txtMessagesDeposes.append(message+"\n");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
