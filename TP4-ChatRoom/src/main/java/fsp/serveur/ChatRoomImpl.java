@@ -20,6 +20,7 @@ public class ChatRoomImpl extends UnicastRemoteObject
 
     public ChatRoomImpl() throws RemoteException {
         messages = new ArrayList<>();
+        utilisateurs = new HashMap<>();
     }
 
     @Override
