@@ -30,14 +30,14 @@ public class IHMChatUser extends javax.swing.JFrame {
         btnEnvoyer.setEnabled(false);
         txtMessagesDeposes.setEditable(false);
 
+        txtPseudo.setText(System.getProperty("user.name"));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-    addWindowListener(new java.awt.event.WindowAdapter()
-    {
-        public void windowClosed(java.awt.event.WindowEvent evt)
-        {
-            formWindowClosed(evt);
-        }
-    });
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
     }
 
     private void formWindowClosed(WindowEvent evt) {
@@ -258,7 +258,6 @@ public class IHMChatUser extends javax.swing.JFrame {
     public void afficher(String message) throws RemoteException {
         txtMessagesDeposes.append(message + "\n");
     }
-
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
