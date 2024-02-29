@@ -22,7 +22,7 @@ public class VendeurApplication extends Application {
         FXMLLoader loader = new FXMLLoader(IHMVendeur.class.getResource("vendeur.fxml"));
         Scene scene = new Scene(loader.load());
 
-        stage.setTitle("Vente aux enchères - Vendeur");
+        stage.setTitle("Vente aux enchères - org.fsp.tp5venteauxenchere.interface_client.Vendeur");
         stage.setScene(scene);
         stage.show();
     }

@@ -10,12 +10,12 @@
 <AnchorPane prefHeight="367.0" prefWidth="345.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.fsp.tp5venteauxenchere.client.IHMParticipant">
 
     <children>
-        <Label layoutX="63.0" layoutY="10.0" prefHeight="27.0" prefWidth="247.0" text="Vente aux enchères - Vendeur" textAlignment="CENTER" wrapText="true">
+        <Label layoutX="63.0" layoutY="10.0" prefHeight="27.0" prefWidth="247.0" text="Vente aux enchères - org.fsp.tp5venteauxenchere.interface_client.Vendeur" textAlignment="CENTER" wrapText="true">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label layoutX="97.0" layoutY="47.0" text="Participant non enregistré" textAlignment="CENTER" textFill="RED">
+        <Label layoutX="97.0" layoutY="47.0" text="org.fsp.tp5venteauxenchere.interface_client.Participant non enregistré" textAlignment="CENTER" textFill="RED">
             <font>
                 <Font size="14.0" />
             </font>
