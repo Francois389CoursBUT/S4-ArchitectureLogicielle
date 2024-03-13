@@ -1,0 +1,21 @@
+body, input, .erreur  {
+  font: normal 12pt Arial;
+}
+body {
+  width: 350px;
+}
+h2 {
+  font: bold 14pt Arial;
+}
+input {
+  margin: 5px 5px 5px 5px;
+  border: 1px black solid;
+}
+.erreur { /* Class pour les messages d'erreur'  */
+    color: red;
+}
+
+.container {
+  display: flex;
+    flex-direction: row;
+}
