@@ -7,15 +7,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="367.0" prefWidth="345.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.fsp.tp5venteauxenchere.client.IHMParticipant">
+<AnchorPane prefHeight="367.0" prefWidth="345.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.fsp.tp5venteauxenchere.client.IHMParticipant">
 
     <children>
-        <Label layoutX="63.0" layoutY="10.0" prefHeight="27.0" prefWidth="247.0" text="Vente aux enchères - org.fsp.tp5venteauxenchere.interface_client.Vendeur" textAlignment="CENTER" wrapText="true">
+        <Label layoutX="54.0" layoutY="14.0" prefHeight="27.0" prefWidth="275.0" text="Vente aux enchères - Participant" textAlignment="CENTER" wrapText="true">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label layoutX="97.0" layoutY="47.0" text="org.fsp.tp5venteauxenchere.interface_client.Participant non enregistré" textAlignment="CENTER" textFill="RED">
+        <Label fx:id="msgConnexion" layoutX="97.0" layoutY="47.0" text="Participant non enregistré" textAlignment="CENTER" textFill="RED">
             <font>
                 <Font size="14.0" />
             </font>
@@ -25,7 +25,7 @@
         <Button layoutX="228.0" layoutY="127.0" mnemonicParsing="false" onAction="#handleSEnregistrer" prefHeight="25.0" prefWidth="87.0" text="S'enregistrer" />
         <Separator layoutX="7.0" layoutY="174.0" prefHeight="27.0" prefWidth="312.0" />
         <Label layoutX="48.0" layoutY="223.0" text="Produit" />
-        <TextField fx:id="testProduit" layoutX="95.0" layoutY="215.0" prefHeight="25.0" prefWidth="220.0" />
+        <TextField fx:id="textProduit" layoutX="95.0" layoutY="215.0" prefHeight="25.0" prefWidth="220.0" />
         <TextField fx:id="nouvelleOffre" layoutX="95.0" layoutY="324.0" prefHeight="25.0" prefWidth="98.0" />
         <Label layoutX="13.0" layoutY="328.0" text="Nouvelle offre" />
         <Button layoutX="209.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleFaireOffre" prefHeight="25.0" prefWidth="107.0" text="Faire offre" />

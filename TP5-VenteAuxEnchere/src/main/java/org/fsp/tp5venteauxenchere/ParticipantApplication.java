@@ -21,7 +21,7 @@ public class ParticipantApplication extends Application {
         FXMLLoader loader = new FXMLLoader(IHMParticipant.class.getResource("participant.fxml"));
         Scene scene = new Scene(loader.load());
 
-        stage.setTitle("Vente aux enchères - org.fsp.tp5venteauxenchere.interface_client.Participant");
+        stage.setTitle("Vente aux enchères - Participant");
         stage.setScene(scene);
         stage.show();
 

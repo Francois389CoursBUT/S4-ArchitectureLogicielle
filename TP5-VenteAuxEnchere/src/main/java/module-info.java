@@ -15,4 +15,7 @@ module org.fsp.tp5venteauxenchere {
     opens org.fsp.tp5venteauxenchere.interface_client to javafx.fxml;
     exports org.fsp.tp5venteauxenchere.interface_serveur;
     opens org.fsp.tp5venteauxenchere.interface_serveur to javafx.fxml;
+
+    exports org.fsp.tp5venteauxenchere.exception;
+    opens org.fsp.tp5venteauxenchere.exception to javafx.fxml;
 }

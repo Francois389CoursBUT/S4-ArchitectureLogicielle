@@ -10,6 +10,12 @@ public class VendeurImpl extends UnicastRemoteObject implements Vendeur {
 
     private IHMVendeur ihm;
 
-    protected VendeurImpl() throws RemoteException {
+    protected VendeurImpl(IHMVendeur vendeur) throws RemoteException {
+        ihm = vendeur;
+    }
+
+    @Override
+    public void communiquerMeilleureOffre(int offre, String pseudo) throws RemoteException {
+        ihm.afficherMeilleureOffre(offre, pseudo);
     }
 }
