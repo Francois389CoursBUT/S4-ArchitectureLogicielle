@@ -1,21 +1,22 @@
-body, input, .erreur  {
+fieldset,legend, input, p, .label, .erreur {
   font: normal 12pt Arial;
 }
-body {
-  width: 350px;
-}
-h2 {
+h1 {
   font: bold 14pt Arial;
 }
-input {
+fieldset {
+  border: 1px blue solid;
+  margin: 5px;
+  padding: 10px
+}
+legend {
+  color: blue ;
+}
+
+form input {
   margin: 5px 5px 5px 5px;
   border: 1px black solid;
 }
 .erreur { /* Class pour les messages d'erreur'  */
     color: red;
-}
-
-.container {
-  display: flex;
-    flex-direction: row;
 }

@@ -30,7 +30,6 @@ public class Commande  {
      */
     public void setClient(Client client) {
         this.client = client;
-        client.ajouterCommande(this);
     }
     
     public int getNumeroCommande() {

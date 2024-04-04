@@ -3,15 +3,26 @@ package org.fsp.tp8boutique.donnees;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Client extends Utilisateur {
+public class Client  {
 
+    private String identifiant;   
+    private String motDePasse;
     private Panier panier;
     private List<Commande> commandes;
 
-    public Client(String idClient, String motDePasse) {
-        super(idClient,motDePasse);
+    public Client(String identifiant, String motDePasse) {
+        this.identifiant = identifiant;
+        this.motDePasse = motDePasse;
         commandes = new ArrayList<>();
         panier = new Panier(this);
+    }
+
+    public String getIdentifiant() {
+        return identifiant;
+    }
+
+    public String getMotDePasse() {
+        return motDePasse;
     }
     
     public Panier getPanier() {

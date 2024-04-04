@@ -5,11 +5,7 @@
  */
 package org.fsp.tp8boutique.javabeans;
 
-import org.fsp.tp8boutique.donnees.Admin;
-import org.fsp.tp8boutique.donnees.Client;
-import org.fsp.tp8boutique.donnees.IdentifiantsException;
-import org.fsp.tp8boutique.donnees.InfosProduitException;
-import org.fsp.tp8boutique.donnees.Produit;
+import org.fsp.tp8boutique.donnees.*;
 
 import java.util.HashMap;
 
@@ -24,7 +20,7 @@ public class Boutique {
     private HashMap<String, Client> clients = new HashMap();
     private Admin admin;
     
-    public Boutique() {
+    public Boutique() { 
         stock.put("R001", new Produit("R001","Smart TV",1500, 20));
         stock.put("R002", new Produit("R002","Smartphone",650, 15));
         stock.put("R003", new Produit("R003","Chaine HIFI",450, 30));
@@ -54,7 +50,7 @@ public class Boutique {
             throws IdentifiantsException {
         if (identifiant==null || identifiant.isEmpty())
             throw new IdentifiantsException("Identifiant ou mot de passe vides(s) !");
-        for(Client client: clients.values()) {
+        for(Client client: clients.values()) {        
             if(client.getIdentifiant().equals(identifiant) 
                     && client.getMotDePasse().equals(motDePasse))
                 return client;

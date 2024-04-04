@@ -64,14 +64,14 @@ public class Panier {
     }        
 
     /** 
-     * Créer une commande à partir du panier et mettre le stock à jour en supprimant les quantités
+     * Crée une commande à partir du panier et met le stock à jour en supprimant les quantités
      * commandées pour chaque produit de la commande.
-     * Lever QuantiteException si un produit n'est plus disponible pour la quantité commandée.
+     * Lève QuantiteException si un produit n'est plus disponible pour la quantité commandée.
      */
     public Commande creerCommande() throws QuantiteException {
         Commande commande = new Commande();
         for(int i=0; i<produits.size(); i++) {
-            if(quantites.get(i) > produits.get(i).getQuantite())
+            if(quantites.get(i) > produits.get(i).getQuantite()) // Quantité commandée > quantité en stock
                 throw new QuantiteException("La quantité du produit "+produits.get(i).getRefproduit()
                             +" n'est plus disponible !");
             commande.ajouterLigneCommande(produits.get(i), quantites.get(i));
@@ -79,6 +79,7 @@ public class Panier {
             produits.get(i).setQuantite((int)(produits.get(i).getQuantite()- quantites.get(i)));
         }
         commande.setClient(client);
+        client.ajouterCommande(commande);
         return commande;
     }
 
